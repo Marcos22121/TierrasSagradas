@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+header {
+    background-color: #181619;
+    color: #DDA74F;
+    font-family: 'Cinzel', serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    border-bottom: 2px solid #272A31;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    background: radial-gradient(circle, #DDA74F 0%, #A76B09 40%, #272A31 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+nav ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+    position: relative;
+}
+
+nav ul.menu > li {
+    position: relative;
+}
+
+nav ul.menu > li > a {
+    text-decoration: none;
+    color: #DDA74F;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+nav ul.menu > li > a:hover {
+    color: #A76B09;
+}
+
+/* Dropdown */
+.dropdown .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #181B22;
+    border: 1px solid #272A31;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 200px;
+    z-index: 10;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 0;
+}
+
+.submenu li a {
+    display: block;
+    text-decoration: none;
+    color: #DDA74F;
+    padding: 8px 16px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.submenu li a:hover {
+    background: radial-gradient(circle, #A76B09 0%, #DDA74F 50%, #272A31 100%);
+    color: #181619;
+}

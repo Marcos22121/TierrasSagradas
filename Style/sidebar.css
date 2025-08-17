@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+
+/* Botón hamburguesa */
+.hamburger {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #DDA74F;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+    color: #A76B09;
+}
+
+/* Sidebar */
+.sidebar {
+        margin: 0;
+    font-family: 'Cinzel', serif;
+    background-color: #181619;
+    color: #DDA74F;
+    font-size: large;
+    font-weight: 500;
+    font-smooth: antialiased;
+    height: 100%;
+    width: 260px; /* ancho fijo */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #181B22;
+    overflow-x: hidden;
+    transform: translateX(-100%); /* escondido por defecto */
+    transition: transform 0.4s ease;
+    padding-top: 60px;
+    z-index: 1000;
+    border-right: 2px solid #272A31;
+}
+
+.sidebar.active {
+    transform: translateX(0); /* aparece deslizándose */
+}
+
+
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #272A31;
+}
+
+.sidebar-header h1 {
+    font-size: 1.2rem;
+    margin: 10px 0 0;
+    background: radial-gradient(circle, #DDA74F 0%, #A76B09 40%, #272A31 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #DDA74F;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #A76B09;
+}
+
+/* Menú */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar-menu li {
+    margin: 15px 0;
+}
+
+.sidebar-menu li a {
+    text-decoration: none;
+    color: #DDA74F;
+    padding: 10px 20px;
+    display: block;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-menu li a:hover {
+    background: radial-gradient(circle, #A76B09 0%, #DDA74F 50%, #272A31 100%);
+    color: #181619;
+    border-radius: 6px;
+}
