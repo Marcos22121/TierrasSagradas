@@ -1,0 +1,197 @@
+/* ===========================
+   VARIABLES Y TIPOGRAFÍA
+=========================== */
+:root {
+    --color-bg: #0B0B0B;
+    --color-dorado-start: #F5D38A;
+    --color-dorado-end: #C9952E;
+    --color-text: #F5D38A;
+    --transition-speed: 0.2s;
+}
+
+/* Fonts */
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+
+
+/* ===========================
+   HERO
+=========================== */
+#hero {
+    position: relative;
+    height: 700px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* para que no interfiera con hover */
+    z-index: 1;
+}
+
+
+.hero-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    
+}
+
+.hero-overlay h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px var(--color-dorado-end);
+}
+
+.hero-overlay p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+.hero-cta .btn-skewed {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(120deg, var(--color-dorado-start), var(--color-dorado-end));
+    color: var(--color-bg);
+    text-decoration: none;
+    transform: skewX(-12deg);
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.hero-cta .btn-skewed:hover {
+    transform: skewX(-10deg) scale(1.05);
+    box-shadow: 0 0 15px var(--color-dorado-end);
+}
+
+/* ===========================
+   SECCIONES
+=========================== */
+section {
+    padding: 5rem 2rem;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 5px var(--color-dorado-end);
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.card-skewed {
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+    border: 2px solid var(--color-dorado-end);
+    border-radius: 10px;
+    overflow: hidden;
+    transform: skewX(-12deg);
+    transition: all var(--transition-speed) ease-in-out;
+    width: 250px;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.card-skewed img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transform: skewX(12deg);
+}
+
+.card-skewed h3, .card-skewed p {
+    transform: skewX(12deg);
+    margin: 0.5rem 1rem;
+}
+
+.card-skewed:hover {
+    transform: skewX(-10deg) scale(1.05);
+    box-shadow: 0 0 15px var(--color-dorado-end);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    background-color: #000;
+    border-top: 1px solid var(--color-dorado-end);
+    padding: 2rem;
+    text-align: center;
+}
+
+footer a {
+    color: var(--color-dorado-end);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+footer a:hover {
+    text-shadow: 0 0 10px var(--color-dorado-end);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media(max-width: 1024px){
+    #hero {
+        height: 60vh;
+    }
+    .hero-overlay h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width: 768px){
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-skewed {
+        width: 80%;
+    }
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+    .hero-overlay p {
+        font-size: 1rem;
+    }
+}
