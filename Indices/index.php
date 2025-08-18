@@ -154,7 +154,7 @@
   // Animación del hero
   gsap.from(".hero-overlay h1", { duration: 1.5, y: -50, opacity: 0, ease: "power3.out" });
   gsap.from(".hero-overlay p", { duration: 1.5, y: 20, opacity: 0, delay: 0.3, ease: "power3.out" });
-  gsap.from(".hero-cta .btn-skewed", { duration: 1, y: 20, opacity: 0, delay: 0.5, stagger: 0.2, ease: "power3.out" });
+  gsap.from(".hero-cta .btn-skewed", { duration: 1, y: 20, delay: 0.5, stagger: 0.2, ease: "power3.out" });
 </script>
 
 

@@ -60,8 +60,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0; /* quitamos padding para que sea full altura */
-        color: var(--color-text); /* texto visible */
+        padding: 22px 8px; /* mucho padding vertical, poco horizontal */    color: var(--color-text); /* texto visible */
         text-decoration: none;
         transform: skewX(-12deg);
         transition: all 0.3s ease-in-out;
