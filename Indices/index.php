@@ -45,30 +45,35 @@
     <div id="hero-particles"></div> <!-- Aquí se renderizan las partículas -->
 </section>
 
-    <!-- Dioses principales -->
     <section id="dioses">
         <h2>Dioses Principales</h2>
-        <div class="cards-container">
-            <?php
-            $dioses = [
-                ["nombre"=>"Azural","rol"=>"Dios del cielo y la tormenta","img"=>"../img/dioses/azural.webp"],
-                ["nombre"=>"Lunara","rol"=>"Diosa de la luna y los misterios","img"=>"../img/dioses/lunara.webp"],
-                ["nombre"=>"Terranox","rol"=>"Dios de la tierra y la guerra","img"=>"../img/dioses/terranox.webp"],
-                ["nombre"=>"Veyra","rol"=>"Diosa del fuego y la pasión","img"=>"../img/dioses/veyra.webp"],
-                ["nombre"=>"Selvath","rol"=>"Dios de los bosques y la vida","img"=>"../img/dioses/selvath.webp"],
-                ["nombre"=>"Nerok","rol"=>"Dios de las sombras y secretos","img"=>"../img/dioses/nerok.webp"]
-            ];
 
-            foreach($dioses as $d){
-                echo '<a href="dioses.php?d='.$d['nombre'].'" class="card-skewed" aria-label="Dios '.$d['nombre'].'">';
-                echo '<img src="'.$d['img'].'" alt="'.$d['nombre'].'">';
-                echo '<h3>'.$d['nombre'].'</h3>';
-                echo '<p>'.$d['rol'].'</p>';
-                echo '</a>';
-            }
-            ?>
-        </div>
-    </section>
+<section class="cards-container">
+    <!-- TARJETA 1 -->
+    <div class="card-skewed" aria-label="Dios Nerok">
+        <div class="particles-container" id="particles-nerok"></div>
+        <img src="../img/Indices/imagen.png" alt="Nerok">
+        <h3>Nerok</h3>
+        <p>Dios de las sombras y secretos</p>
+    </div>
+
+    <!-- TARJETA 2 -->
+    <div class="card-skewed" aria-label="Diosa Lumina">
+        <div class="particles-container" id="particles-lumina"></div>
+        <img src="../img/dioses/lumina.webp" alt="Lumina">
+        <h3>Lumina</h3>
+        <p>Diosa de la luz y la verdad</p>
+    </div>
+
+    <!-- TARJETA 3 -->
+    <div class="card-skewed" aria-label="Dios Tempus">
+        <div class="particles-container" id="particles-tempus"></div>
+        <img src="../img/dioses/tempus.webp" alt="Tempus">
+        <h3>Tempus</h3>
+        <p>Dios del tiempo eterno</p>
+    </div>
+</section>
+
 
     <!-- Bestiario -->
     <section id="bestiario">
@@ -156,6 +161,52 @@
   gsap.from(".hero-overlay p", { duration: 1.5, y: 20, opacity: 0, delay: 0.3, ease: "power3.out" });
   gsap.from(".hero-cta .btn-skewed", { duration: 1, y: 20, delay: 0.5, stagger: 0.2, ease: "power3.out" });
 </script>
+<script>
+    document.querySelectorAll('.card-skewed').forEach(card => {
+        const particleContainer = card.querySelector('.particles-container');
+        const particleId = particleContainer.id;
+
+        let particlesLoaded = false;
+
+        card.addEventListener('mouseenter', () => {
+            if (!particlesLoaded) {
+                particlesJS.load(particleId, '../Scripts/particlesjs-config.json', function() {
+                    console.log(`Partículas cargadas para ${particleId}`);
+                    particlesLoaded = true;
+                });
+            }
+        });
+    });
+</script>
+
+<script src="../Scripts/particles.js"></script>
+<script>
+    document.querySelectorAll('.card-skewed').forEach(card => {
+        const particleContainer = card.querySelector('.particles-container');
+        const particleId = particleContainer.id;
+
+        let particlesLoaded = false;
+
+        card.addEventListener('mouseenter', () => {
+            if (!particlesLoaded) {
+                particlesJS.load(particleId, '../Scripts/particlesjs-config.json', function() {
+                    console.log(`Partículas cargadas para ${particleId}`);
+                    particlesLoaded = true;
+                });
+            }
+        });
+
+        card.addEventListener('mouseleave', () => {
+    const canvas = particleContainer.querySelector('canvas');
+    if (canvas) {
+        canvas.remove();
+        particlesLoaded = false;
+    }
+});
+
+    });
+</script>
+
 
 
 </body>
