@@ -33,6 +33,7 @@
         justify-content: space-between;
         padding: 0 2rem;
         z-index: 1000;
+        filter: opacity(85%);
     }
 
     /* Contenedor del header */

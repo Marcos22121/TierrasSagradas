@@ -111,17 +111,17 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
     align-items: flex-start;
 }
 
 .card-skewed {
     background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
-    border: 2px solid var(--color-dorado-end);
-    border-radius: 12px;
-    overflow: hidden;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0;
+    border-image: linear-gradient(90deg, var(--color-dorado-start), var(--color-dorado-end)) 1;
     transform: skewX(-12deg);
-    transition: all var(--transition-speed) ease-in-out;
+    transition: all 0.2s ease-in-out;
     width: 270px;
     color: var(--color-text);
     position: relative;
@@ -130,31 +130,57 @@ h2 {
     align-items: center;
     padding-bottom: 1.5rem;
     text-align: center;
+    min-height: 350px;
+    justify-content: flex-end; /* Asegura que el contenido esté abajo */
 }
 
 .card-skewed:hover {
-    transform: skewX(-10deg) scale(1.05);
+    transform: skewX(-12deg) scaleY(1.04);
     box-shadow: 0 0 15px var(--color-dorado-end);
+    cursor: pointer;
 }
 
 .card-skewed img {
     width: 100%;
-    height: 200px;
+    height: 100%;
+    min-height: 250px;
     object-fit: cover;
     display: block;
-    border-radius: 8px;
+    border-radius: 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    transform: skewX(-0deg);
+    transform: skewX(0deg);
     z-index: 0;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.card-skewed h3, .card-skewed p {
-    transform: skewX(12deg); /* counter-skew for text */
+.card-skewed-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* texto abajo */
+    align-items: center;
+    padding-bottom: 1.5rem; /* espacio abajo para el texto */
+    min-height: 100px; /* puedes ajustar este valor si necesitas más espacio */
+}
+
+/* Oculta h3 y p por defecto */
+.card-skewed h3,
+.card-skewed p {
+    transform: skewX(12deg);
     margin: 0.5rem 1rem;
     text-align: center;
-    z-index: 2;
-    position: relative;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Muestra h3 y p solo en hover */
+.card-skewed:hover h3,
+.card-skewed:hover p {
+    opacity: 1;
 }
 
 .particles-container {
@@ -166,32 +192,31 @@ h2 {
     pointer-events: none;
     z-index: 1;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .card-skewed:hover .particles-container {
     opacity: 1;
 }
 
-/* ===========================
-   FOOTER
-=========================== */
-footer {
-    background-color: #000;
-    border-top: 1px solid var(--color-dorado-end);
-    padding: 2rem;
-    text-align: center;
+.card-overlay:hover {
+    transform: translateY(-40px) skewX(0deg);
+    scale: 1.25;
+    transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
 }
 
-footer a {
-    color: var(--color-dorado-end);
-    text-decoration: none;
-    margin: 0 0.5rem;
+.card-overlay:hover {
+    transform: translateY(-42px) skewX(0deg);
+    scale: 1.25;
+    transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
 }
 
-footer a:hover {
-    text-shadow: 0 0 10px var(--color-dorado-end);
+.card-overlay:not(:hover) {
+     transform: translateY(0px) skewX(0deg);
+    scale: 1;
+    transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
 }
+
 
 /* ===========================
    RESPONSIVE

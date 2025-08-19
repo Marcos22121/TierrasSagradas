@@ -49,26 +49,45 @@
         <h2>Dioses Principales</h2>
 
 <section class="cards-container">
-    <!-- TARJETA 1 -->
-    <div class="card-skewed" aria-label="Dios Nerok">
-        <div class="particles-container" id="particles-nerok"></div>
-        <img src="../img/Indices/imagen.png" alt="Nerok">
-        <h3>Nerok</h3>
-        <p>Dios de las sombras y secretos</p>
-    </div>
+    
+ <div class="card-skewed" aria-label="Dios Nerok">
+    <div class="particles-container" id="particles-nerok"></div>
+    
+    <!-- Contenedor de imágenes -->
+    <div class="card-img-wrapper">
+        <!-- Gif de galaxia (fondo base) -->
+        <img src="../img/Indices/galax.gif" alt="Nerok fondo" class="card-bg">
 
-    <!-- TARJETA 2 -->
-    <div class="card-skewed" aria-label="Diosa Lumina">
-        <div class="particles-container" id="particles-lumina"></div>
-        <img src="../img/dioses/lumina.webp" alt="Lumina">
-        <h3>Lumina</h3>
-        <p>Diosa de la luz y la verdad</p>
+        <!-- Imagen transparente (efecto en hover) -->
     </div>
+        <img src="../img/Indices/overlay.png" alt="Nerok overlay" class="card-overlay">
 
-    <!-- TARJETA 3 -->
+    <h3>Binohmo</h3>
+    <p>Dios y Creador supremo</p>
+</div>
+
+
+   <div class="card-skewed" aria-label="Dios Nerok">
+    <div class="particles-container" id="particles-nerok"></div>
+    
+    <!-- Contenedor de imágenes -->
+    <div class="card-img-wrapper">
+        <!-- Gif de galaxia (fondo base) -->
+        <img src="../img/Indices/bgShelby.png" alt="Nerok fondo" class="card-bg">
+
+        <!-- Imagen transparente (efecto en hover) -->
+    </div>
+        <img src="../img/Indices/shelby.png" alt="Nerok overlay" class="card-overlay">
+
+    <h3>Binohmo</h3>
+    <p>Dios y Creador supremo</p>
+</div>
+
+
+ 
     <div class="card-skewed" aria-label="Dios Tempus">
         <div class="particles-container" id="particles-tempus"></div>
-        <img src="../img/dioses/tempus.webp" alt="Tempus">
+        <img src="../img/Indices/galax.gif" alt="Nerok">
         <h3>Tempus</h3>
         <p>Dios del tiempo eterno</p>
     </div>
@@ -207,7 +226,7 @@
     });
 </script>
 
-
+<?php include "../includes/footer.php"; ?>
 
 </body>
 </html>
