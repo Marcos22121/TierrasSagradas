@@ -3,8 +3,9 @@
     <!-- Logo -->
     <div class="logo">
       <a href="javascript:void(0)" id="openSidebar">
-        <img src="../img/Includes/logo.png" alt="Tierras Sagradas">
+        <img src="../img/Includes/logo_dragon.webp" alt="Tierras Sagradas">
       </a>
+      <h2>Tierras Sagradas</h2>
     </div>
 
     <nav>
@@ -29,8 +30,8 @@
     header {
       position: fixed;
       top: 0;
-      width: 95%;
-      height: 80px; /* altura total del header */
+      width: 100%;
+      height: 90px; /* altura total del header */
       background: #0B0B0B; /* negro sólido */
       display: flex;
       align-items: center;
@@ -183,6 +184,14 @@
 
     .search-skewed button:hover {
       background: linear-gradient(90deg, var(--color-dorado-end), var(--color-dorado-start));
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      
     }
   </style>
 

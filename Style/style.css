@@ -17,8 +17,6 @@ body {
     color: var(--color-text);
 }
 
-
-
 /* ===========================
    HERO
 =========================== */
@@ -27,6 +25,10 @@ body {
     height: 700px;
     width: 100%;
     overflow: hidden;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #hero-particles {
@@ -35,10 +37,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* para que no interfiera con hover */
+    pointer-events: none;
     z-index: 1;
 }
-
 
 .hero-gif {
     width: 100%;
@@ -60,7 +61,6 @@ body {
     align-items: center;
     text-align: center;
     padding: 2rem;
-    
 }
 
 .hero-overlay h1 {
@@ -93,6 +93,7 @@ body {
     box-shadow: 0 0 15px var(--color-dorado-end);
 }
 
+
 /* ===========================
    SECCIONES
 =========================== */
@@ -113,7 +114,6 @@ h2 {
     justify-content: center;
     align-items: flex-start;
 }
-
 .card-skewed {
     background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
     border-width: 2px;
@@ -128,10 +128,9 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 1.5rem;
     text-align: center;
     min-height: 350px;
-    justify-content: flex-end; /* Asegura que el contenido esté abajo */
+    justify-content: flex-end;
 }
 
 .card-skewed:hover {
@@ -143,7 +142,6 @@ h2 {
 .card-skewed img {
     width: 100%;
     height: 100%;
-    min-height: 250px;
     object-fit: cover;
     display: block;
     border-radius: 0;
@@ -160,23 +158,43 @@ h2 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* texto abajo */
+    justify-content: flex-end;
     align-items: center;
-    padding-bottom: 1.5rem; /* espacio abajo para el texto */
-    min-height: 100px; /* puedes ajustar este valor si necesitas más espacio */
+    padding-bottom: 1.5rem;
 }
 
-/* Oculta h3 y p por defecto */
+/* Gradient background for text on hover */
+.card-skewed-content::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%; /* más alto para cubrir bien el texto */
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1; /* ahora está encima de la imagen */
+    opacity: 0; /* oculto por default */
+}
+
+.card-skewed:hover .card-skewed-content::before {
+    opacity: 1;
+}
+
+
+/* Hide h3 and p by default */
 .card-skewed h3,
-.card-skewed p {
+.card-skewed p {    
     transform: skewX(12deg);
-    margin: 0.5rem 1rem;
     text-align: center;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
+    text-shadow: -2px 3px 17px rgba(0,0,0,0.95);
+    z-index: 2; /* aseguramos que el texto esté encima del fondo */
 }
 
-/* Muestra h3 y p solo en hover */
+/* Show h3 and p only on hover */
 .card-skewed:hover h3,
 .card-skewed:hover p {
     opacity: 1;
@@ -211,40 +229,7 @@ h2 {
 }
 
 .card-overlay:not(:hover) {
-     transform: translateY(0px) skewX(0deg);
+    transform: translateY(0px) skewX(0deg);
     scale: 1;
     transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
-}
-
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-@media(max-width: 1024px){
-    #hero {
-        height: 60vh;
-    }
-    .hero-overlay h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media(max-width: 768px){
-    .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .cards-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .card-skewed {
-        width: 80%;
-    }
-    .hero-overlay h1 {
-        font-size: 2rem;
-    }
-    .hero-overlay p {
-        font-size: 1rem;
-    }
 }

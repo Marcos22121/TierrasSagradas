@@ -98,7 +98,7 @@
 }
 
 .sidebar-menu li a:hover {
-    background: radial-gradient(circle, #A76B09 0%, #DDA74F 50%, #272A31 100%);
+      background: linear-gradient(90deg, var(--color-dorado-start), var(--color-dorado-end));
     color: #181619;
     border-radius: 6px;
 }

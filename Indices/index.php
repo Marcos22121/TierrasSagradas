@@ -50,41 +50,43 @@
 
 <section class="cards-container">
     
- <div class="card-skewed" aria-label="Dios Nerok">
+<div class="card-skewed" aria-label="Dios Nerok">
     <div class="particles-container" id="particles-nerok"></div>
     
     <!-- Contenedor de imágenes -->
     <div class="card-img-wrapper">
         <!-- Gif de galaxia (fondo base) -->
         <img src="../img/Indices/gg.gif" alt="Nerok fondo" class="card-bg">
-
-        <!-- Imagen transparente (efecto en hover) -->
     </div>
-        <img src="../img/Indices/overlay.png" alt="Nerok overlay" class="card-overlay">
 
-    <h3>Binohmo</h3>
-    <p>Dios y Creador supremo</p>
+    <!-- Imagen transparente (efecto en hover) -->
+    <img src="../img/Indices/overlay.png" alt="Nerok overlay" class="card-overlay">
+
+    <!-- Contenido con gradiente de fondo -->
+    <div class="card-skewed-content">
+        <h3>Binohmo</h3>
+        <p>Dios y Creador supremo</p>
+    </div>
 </div>
 
-
-   <div class="card-skewed" aria-label="Dios Nerok">
-    <div class="particles-container" id="particles-nerok"></div>
+<div class="card-skewed" aria-label="Tobias">
+    <div class="particles-container" id="particles-tobias"></div>
     
     <!-- Contenedor de imágenes -->
     <div class="card-img-wrapper">
-        <!-- Gif de galaxia (fondo base) -->
-        <img src="../img/Indices/bgShelby.png" alt="Nerok fondo" class="card-bg">
-
-        <!-- Imagen transparente (efecto en hover) -->
+        <!-- Fondo base -->
+        <img src="../img/Indices/bgShelby.png" alt="Tobias fondo" class="card-bg">
     </div>
-        <img src="../img/Indices/shelby.png" alt="Nerok overlay" class="card-overlay">
 
-    <h3>Binohmo</h3>
-    <p>Dios y Creador supremo</p>
+    <!-- Imagen transparente (efecto en hover) -->
+    <img src="../img/Indices/shelby.png" alt="Tobias overlay" class="card-overlay">
+
+    <!-- Contenido con gradiente de fondo -->
+    <div class="card-skewed-content">
+        <h3>Tobias</h3>
+        <p>El ingeniero, inventor y visionario de las Tierras Sagradas</p>
+    </div>
 </div>
-
-
- 
     <div class="card-skewed" aria-label="Dios Tempus">
         <div class="particles-container" id="particles-tempus"></div>
         <img src="../img/Indices/galax.gif" alt="Nerok">
