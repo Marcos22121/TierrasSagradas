@@ -46,7 +46,7 @@
 </section>
 
     <section id="dioses">
-        <h2>Dioses Principales</h2>
+        <h2>Personajes Destacados</h2>
 
 <section class="cards-container">
     
@@ -56,7 +56,7 @@
     <!-- Contenedor de imágenes -->
     <div class="card-img-wrapper">
         <!-- Gif de galaxia (fondo base) -->
-        <img src="../img/Indices/galax.gif" alt="Nerok fondo" class="card-bg">
+        <img src="../img/Indices/gg.gif" alt="Nerok fondo" class="card-bg">
 
         <!-- Imagen transparente (efecto en hover) -->
     </div>
