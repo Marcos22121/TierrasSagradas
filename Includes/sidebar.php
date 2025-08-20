@@ -27,9 +27,9 @@
       <span class="line-wrap"></span>
     </a>
     <ul class="submenu">
-      <li><a href="personajes.php?c=nerok">Nerok</a></li>
-      <li><a href="personajes.php?c=tempus">Tempus</a></li>
-      <li><a href="personajes.php?c=lunara">Lunara</a></li>
+      <li><a href="personajes.php?c=nerok">Binohmo</a></li>
+      <li><a href="personajes.php?c=tempus">Tobi Shelby</a></li>
+      <li><a href="personajes.php?c=lunara">Augrim</a></li>
     </ul>
   </li>
 

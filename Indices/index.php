@@ -71,28 +71,37 @@
 
 <div class="card-skewed" aria-label="Tobias">
     <div class="particles-container" id="particles-tobias"></div>
-    
     <!-- Contenedor de imágenes -->
     <div class="card-img-wrapper">
         <!-- Fondo base -->
         <img src="../img/Indices/bgShelby.png" alt="Tobias fondo" class="card-bg">
     </div>
-
     <!-- Imagen transparente (efecto en hover) -->
     <img src="../img/Indices/shelby.png" alt="Tobias overlay" class="card-overlay">
-
     <!-- Contenido con gradiente de fondo -->
     <div class="card-skewed-content">
-        <h3>Tobias</h3>
+        <h3>Tobi Shelby</h3>
         <p>El ingeniero, inventor y visionario de las Tierras Sagradas</p>
     </div>
 </div>
-    <div class="card-skewed" aria-label="Dios Tempus">
-        <div class="particles-container" id="particles-tempus"></div>
-        <img src="../img/Indices/galax.gif" alt="Nerok">
-        <h3>Tempus</h3>
-        <p>Dios del tiempo eterno</p>
+
+<!-- Nuevo card-skewed personalizado -->
+<div class="card-skewed" aria-label="Nuevo Personaje">
+    <div class="particles-container" id="particles-nuevo"></div>
+    <div class="card-img-wrapper">
+        <!-- Cambia la imagen de fondo aquí -->
+        <img src="../img/Indices/aman.png" alt="Nuevo fondo" class="card-bg">
     </div>
+    <!-- Cambia la imagen overlay aquí -->
+    <img src="../img/Indices/augrim.png" alt="Nuevo overlay" class="card-overlay">
+    <div class="card-skewed-content">
+        <h3>Augrim</h3>
+        <p>Héroe Legendario de las Montañas Luminosas</p>
+    </div>
+</div>
+
+
+    
 </section>
 
 
