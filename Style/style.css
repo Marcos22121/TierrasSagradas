@@ -1,33 +1,51 @@
+
+
 /* ===========================
    VARIABLES Y TIPOGRAFÍA
 =========================== */
-:root {
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');:root {
     --color-bg: #0B0B0B;
     --color-dorado-start: #F5D38A;
     --color-dorado-end: #C9952E;
     --color-text: #F5D38A;
     --transition-speed: 0.2s;
+
+    
 }
+
+
 
 /* Fonts */
 body {
     margin: 0;
     padding: 0%;
     overflow-x: hidden;
-    font-family: 'Lora', serif;
     background-color: var(--color-bg);
     color: var(--color-text);
+    font-family: 'Libertinus Serif', serif;
+    font-size: 1.1rem;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font: Libertinus Serif, serif;
 }
 
 /* ===========================
    HERO
 =========================== */
+/* ===========================
+    HERO
+=========================== */
 #hero {
     position: relative;
-    height: 700px;
-    width: 100%;
+    height: 100vh; /* Usa viewport height para ocupar toda la pantalla */
+    width: 100vw;
     overflow: hidden;
-    min-height: 350px;
+    min-height: 500px; /* Asegura un tamaño mínimo */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,7 +58,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 1;
+    z-index: 0;
 }
 
 .hero-gif {
@@ -49,25 +67,47 @@ body {
     object-fit: cover;
     display: block;
 }
+
+/* Fix: horizontal-frame sticks to bottom of hero */
+
 .horizontal-frame {
-    position: absolute; /* encima del contenido */
-    top: calc(100% - 600px); /* 50px más arriba del borde del hero */
-    left: 0;
-    width: 100%;  /* ocupa todo el ancho de la pantalla */
-    height: auto; /* mantiene proporciones */
-    z-index: 5;   /* encima de hero, debajo del contenido */
-    pointer-events: none; /* para que no interfiera con clicks */
+    background-image: url('../img/Indices/horMarco2.png');
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: auto 100%; /* Full height, auto width for repeat */
+    width: 100vw;
+    min-height: 220px; /* Adjust as needed for your frame image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    margin-top: -5%;
+    overflow: hidden;
+    padding: 5%;
 }
 
-.horizontal-frame img {
-    display: block;
-    width: 100%; /* Se ajusta al ancho del viewport */
-    height: auto;
-    object-fit: cover; /* Mantiene la proporción de la textura */
-    z-index: 1;
-
+/* Elements inside .horizontal-frame will be centered and aligned horizontally */
+.horizontal-frame-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; /* Space between elements */
+    width: 100%;
+    padding: 3rem 20%; /* Vertical padding, no excessive horizontal padding */
+    position: relative;
+    z-index: 11;
 }
 
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+        z-index: 10;
+    position: relative; /* Ensure z-index works */
+}
 
 .hero-overlay {
     position: absolute;
@@ -81,26 +121,31 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    padding: 2rem;  
 }
 
 .hero-overlay h1 {
     font-family: 'Cinzel', serif;
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 4rem); /* Tamaño de fuente adaptable */
     margin-bottom: 1rem;
     text-shadow: 0 0 10px var(--color-dorado-end);
 }
 
 .hero-overlay p {
-    font-size: 1.2rem;
-    max-width: 800px;
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Tamaño de fuente adaptable */
     margin-bottom: 2rem;
     text-shadow: 0 0 8px rgba(0,0,0,0.7);
 }
 
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan */
+    justify-content: center;
+    gap: 1rem;
+}
+
 .hero-cta .btn-skewed {
     display: inline-block;
-    margin: 0.5rem;
     padding: 0.7rem 1.5rem;
     background: linear-gradient(120deg, var(--color-dorado-start), var(--color-dorado-end));
     color: var(--color-bg);
@@ -114,25 +159,31 @@ body {
     box-shadow: 0 0 15px var(--color-dorado-end);
 }
 
-
 /* ===========================
    SECCIONES
 =========================== */
 
+
 .content-wrapper {
     position: relative;
-    z-index: 1; /* queda detrás de los elementos del contenido */
-    background-image: url('../img/Indices/marco.png'); /* ruta de tu imagen */
-    background-repeat: repeat-y; /* se repite verticalmente si la imagen es corta */
-    background-position: center top; /* centrada horizontal y arriba alineada con hero */
-    background-size: contain; /* se ajusta el ancho de la imagen */
-        padding-top: 450px; /* ajustá la cantidad según cuánto quieras empujar */
-
+    background-image: url('../img/Indices/marco.png');
+    background-repeat: repeat-y;
+    background-position: center top;
+    background-size: contain;
+    padding: 150px;
+    margin-top: -5%;
+    padding-top: 120px;
+    margin-bottom: 50px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 400px;
+    overflow: hidden;
 }
 
-section {
-    padding: 5rem 2rem;
-}
 
 h2 {
     font-family: 'Cinzel', serif;
@@ -141,12 +192,14 @@ h2 {
     text-align: center;
     text-shadow: 0 0 5px var(--color-dorado-end);
 }
+
 .cards-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
 }
+
 .card-skewed {
     background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
     border-width: 2px;
@@ -265,47 +318,5 @@ h2 {
     transform: translateY(0px) skewX(0deg);
     scale: 1;
     transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
-}
-
-@media screen and (max-width: 1024px) {
-    .hero-overlay h1 {
-        font-size: 2.5rem;
-    }
-    .hero-overlay p {
-        font-size: 1rem;
-    }
-    .card-skewed {
-        width: 220px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #hero {
-        height: 500px;
-    }
-    .hero-overlay h1 {
-        font-size: 2rem;
-    }
-    .hero-overlay p {
-        font-size: 0.9rem;
-    }
-    .card-skewed {
-        width: 180px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #hero {
-        height: 400px;
-    }
-    .hero-overlay h1 {
-        font-size: 1.5rem;
-    }
-    .hero-overlay p {
-        font-size: 0.8rem;
-    }
-    .card-skewed {
-        width: 150px;
-    }
 }
 

@@ -1,6 +1,3 @@
-<?php
-// index.php - Página principal de Tierras Sagradas
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,25 +7,18 @@
     <meta name="description" content="Explora los dioses, bestias y historias de las Tierras Sagradas.">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../style/style.css">
 
-    <!-- JS Libraries -->
-     
+    <!-- JS Libraries -->     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-    
-    
-
-
     </script>
 </head>
-
+<?php include '../includes/header.php'; ?>
 <body>
-    <?php include '../includes/header.php'; ?>
-
+<section class="flex">
    <section id="hero">
   
     <img src="../img/indices/ezgif.gif" alt="Tierras Sagradas" class="hero-gif">
@@ -46,8 +36,21 @@
 </section>
 
 <div class="horizontal-frame">
-    <img src="../img/Indices/horMarco.png" alt="Separador horizontal">
+
+<div class="horizontal-frame-overlay">
+        <img src="../img/Indices/augrim.png" alt="augrim" width="300px" height="400px" class="hero-img">
+
+    <div>
+    <h2>Sobre las Tierras Sagradas</h2>
+    <hr>
+    <p>Las Tierras Sagradas son un vasto mundo lleno de mitología, donde dioses y héroes conviven con bestias legendarias. Desde las Montañas Negras hasta los Lagos de Lunara, cada rincón guarda secretos y aventuras por descubrir.</p>
+    <p>En esta enciclopedia encontrarás información sobre los dioses que rigen este mundo, las bestias que lo habitan y las historias que han forjado su historia. Explora los personajes destacados, sumérgete en el bestiario y descubre las leyendas que dan vida a las Tierras Sagradas.</p>
 </div>
+    
+</div>
+
+</div>
+</section>
 
 <div class="content-wrapper"> 
 
@@ -109,6 +112,7 @@
 
     
 </section>
+
 
 
     <!-- Bestiario -->

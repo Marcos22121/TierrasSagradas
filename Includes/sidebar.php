@@ -165,7 +165,7 @@ hr {
   bottom: 0; /* solo abajo */
   left: 15%;
   width: 70%;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     to right,
     transparent,
