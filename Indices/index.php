@@ -45,6 +45,12 @@
     <div id="hero-particles"></div> <!-- Aquí se renderizan las partículas -->
 </section>
 
+<div class="horizontal-frame">
+    <img src="../img/Indices/horMarco.png" alt="Separador horizontal">
+</div>
+
+<div class="content-wrapper"> 
+
     <section id="dioses">
         <h2>Personajes Destacados</h2>
 
@@ -125,20 +131,29 @@
                 <p>Se esconde entre la penumbra de los bosques.</p>
             </div>
         </div>
-        <a href="bestiario.php" class="btn-skewed">Ver Todo el Bestiario</a>
     </section>
 
-    <!-- Historias -->
     <section id="historias">
         <h2>Tres Historias Principales</h2>
         <div class="cards-container">
-            <a href="historias.php?h=origen-del-cielo" class="btn-skewed">El Origen del Cielo</a>
-            <a href="historias.php?h=la-guerra-de-los-dioses" class="btn-skewed">La Guerra de los Dioses</a>
-            <a href="historias.php?h=los-susurros-de-lunara" class="btn-skewed">Los Susurros de Lunara</a>
+            <div class="card-skewed">
+                <img src="../img/historias/origen-cielo.jpg" alt="Origen del Cielo">
+                <h3>Origen del Cielo</h3>
+                <p>La creación de los cielos y las estrellas.</p>
+            </div>
+            <div class="card-skewed">
+                <img src="../img/historias/guerra-dioses.jpg" alt="Guerra de los Dioses">
+                <h3>Guerra de los Dioses</h3>
+                <p>El conflicto que definió el destino de las Tierras Sagradas.</p>
+            </div>
+            <div class="card-skewed">
+                <img src="../img/historias/susurros-lunara.jpg" alt="Susurros de Lunara">
+                <h3>Susurros de Lunara</h3>
+                <p>Los secretos revelados por la diosa de la luna.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Tierras -->
     <section id="tierras">
         <h2>Explora las Tierras</h2>
         <div class="cards-container">
@@ -149,21 +164,9 @@
         </div>
     </section>
 
-    <!-- Diario -->
-    <section id="diario">
-        <h2>Diario del Cronista</h2>
-        <div class="cards-container">
-            <div class="card-skewed">
-                <h3>12 de Marzo</h3>
-                <p>Se avistaron nuevas criaturas en el bosque norte.</p>
-            </div>
-            <div class="card-skewed">
-                <h3>5 de Abril</h3>
-                <p>Los dioses han descendido durante la tormenta solar.</p>
-            </div>
-        </div>
-        <a href="diario.php" class="btn-skewed">Leer el Diario</a>
-    </section>
+
+
+    </div>
 
     <?php include '../includes/footer.php'; ?>
 

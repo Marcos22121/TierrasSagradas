@@ -19,7 +19,7 @@
       <a href="bestiario.php" class="nav-skewed"><span>Bestiario</span></a>
       <a href="historias.php" class="nav-skewed"><span>Historias</span></a>
       <a href="tierras.php" class="nav-skewed"><span>Tierras</span></a>
-      <a href="diario.php" class="nav-skewed"><span>Diario</span></a>
+      <a href="museo.php" class="nav-skewed"><span>Museo</span></a>
     </nav>
   </div>
 

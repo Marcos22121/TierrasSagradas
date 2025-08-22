@@ -12,6 +12,8 @@
 /* Fonts */
 body {
     margin: 0;
+    padding: 0%;
+    overflow-x: hidden;
     font-family: 'Lora', serif;
     background-color: var(--color-bg);
     color: var(--color-text);
@@ -47,6 +49,25 @@ body {
     object-fit: cover;
     display: block;
 }
+.horizontal-frame {
+    position: absolute; /* encima del contenido */
+    top: calc(100% - 600px); /* 50px más arriba del borde del hero */
+    left: 0;
+    width: 100%;  /* ocupa todo el ancho de la pantalla */
+    height: auto; /* mantiene proporciones */
+    z-index: 5;   /* encima de hero, debajo del contenido */
+    pointer-events: none; /* para que no interfiera con clicks */
+}
+
+.horizontal-frame img {
+    display: block;
+    width: 100%; /* Se ajusta al ancho del viewport */
+    height: auto;
+    object-fit: cover; /* Mantiene la proporción de la textura */
+    z-index: 1;
+
+}
+
 
 .hero-overlay {
     position: absolute;
@@ -97,6 +118,18 @@ body {
 /* ===========================
    SECCIONES
 =========================== */
+
+.content-wrapper {
+    position: relative;
+    z-index: 1; /* queda detrás de los elementos del contenido */
+    background-image: url('../img/Indices/marco.png'); /* ruta de tu imagen */
+    background-repeat: repeat-y; /* se repite verticalmente si la imagen es corta */
+    background-position: center top; /* centrada horizontal y arriba alineada con hero */
+    background-size: contain; /* se ajusta el ancho de la imagen */
+        padding-top: 450px; /* ajustá la cantidad según cuánto quieras empujar */
+
+}
+
 section {
     padding: 5rem 2rem;
 }
@@ -233,3 +266,46 @@ h2 {
     scale: 1;
     transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
 }
+
+@media screen and (max-width: 1024px) {
+    .hero-overlay h1 {
+        font-size: 2.5rem;
+    }
+    .hero-overlay p {
+        font-size: 1rem;
+    }
+    .card-skewed {
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #hero {
+        height: 500px;
+    }
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+    .hero-overlay p {
+        font-size: 0.9rem;
+    }
+    .card-skewed {
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #hero {
+        height: 400px;
+    }
+    .hero-overlay h1 {
+        font-size: 1.5rem;
+    }
+    .hero-overlay p {
+        font-size: 0.8rem;
+    }
+    .card-skewed {
+        width: 150px;
+    }
+}
+

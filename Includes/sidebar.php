@@ -30,6 +30,16 @@
       <li><a href="personajes.php?c=nerok">Binohmo</a></li>
       <li><a href="personajes.php?c=tempus">Tobi Shelby</a></li>
       <li><a href="personajes.php?c=lunara">Augrim</a></li>
+       <li><a href="personajes.php?c=nerok">MYMP</a></li>
+      <li><a href="personajes.php?c=tempus">Lord Utared</a></li>
+      <li><a href="personajes.php?c=lunara">Zocram</a></li>
+      <li><a href="personajes.php?c=nerok">Evig</a></li>
+      <li><a href="personajes.php?c=tempus">Bondlack</a></li>
+      <li><a href="personajes.php?c=lunara">Aiden</a></li>
+      <li><a href="personajes.php?c=nerok">Ignamund</a></li>
+      <li><a href="personajes.php?c=tempus">Fakutron</a></li>
+      <li><a href="personajes.php?c=lunara"></a></li>
+      
     </ul>
   </li>
 
