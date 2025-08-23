@@ -10,10 +10,14 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-    <!-- JS Libraries -->     
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     </script>
 </head>
 <?php include '../includes/header.php'; ?>
@@ -38,7 +42,7 @@
 <div class="horizontal-frame">
 
 <div class="horizontal-frame-overlay">
-        <img src="../img/Indices/augrim.png" alt="augrim" width="300px" height="400px" class="hero-img">
+        <img src="../img/Indices/dragon.png" alt="augrim" width="400px" height="400px" class="hero-img">
 
     <div>
     <h2>Sobre las Tierras Sagradas</h2>
@@ -47,9 +51,8 @@
     <p>En esta enciclopedia encontrarás información sobre los dioses que rigen este mundo, las bestias que lo habitan y las historias que han forjado su historia. Explora los personajes destacados, sumérgete en el bestiario y descubre las leyendas que dan vida a las Tierras Sagradas.</p>
 </div>
     
-</div>
 
-</div>
+
 </section>
 
 <div class="content-wrapper"> 
@@ -94,7 +97,6 @@
     </div>
 </div>
 
-<!-- Nuevo card-skewed personalizado -->
 <div class="card-skewed" aria-label="Nuevo Personaje">
     <div class="particles-container" id="particles-nuevo"></div>
     <div class="card-img-wrapper">
@@ -108,71 +110,28 @@
         <p>Héroe Legendario de las Montañas Luminosas</p>
     </div>
 </div>
-
-
     
 </section>
+<div class="mapa-h2">
+<h2>Mapa Interactivo</h2>
+</div>
+
+<div class="pergamino-wrapper">
+    
+  <img class="pergamino-img" src="../img/indices/pergamin.png" alt="Pergamino">
+
+  <div class="map-slot">
+    <div id="mapa" style="width: 60%; height: 55%; border-radius: 12px; margin-bottom: 105px;"></div>
+  </div>
+</div>
 
 
-
-    <!-- Bestiario -->
-    <section id="bestiario">
-        <h2>Bestiario en Foco</h2>
-        <div class="cards-container">
-            <div class="card-skewed">
-                <img src="../img/bestiario/bestia1.webp" alt="Grifo de Ébano">
-                <h3>Grifo de Ébano</h3>
-                <p>Guardián de los cielos oscuros.</p>
-            </div>
-            <div class="card-skewed">
-                <img src="../img/bestiario/bestia2.webp" alt="Serpiente de Cristal">
-                <h3>Serpiente de Cristal</h3>
-                <p>Habita los lagos encantados de Lunara.</p>
-            </div>
-            <div class="card-skewed">
-                <img src="../img/bestiario/bestia3.webp" alt="León de Sombras">
-                <h3>León de Sombras</h3>
-                <p>Se esconde entre la penumbra de los bosques.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="historias">
-        <h2>Tres Historias Principales</h2>
-        <div class="cards-container">
-            <div class="card-skewed">
-                <img src="../img/historias/origen-cielo.jpg" alt="Origen del Cielo">
-                <h3>Origen del Cielo</h3>
-                <p>La creación de los cielos y las estrellas.</p>
-            </div>
-            <div class="card-skewed">
-                <img src="../img/historias/guerra-dioses.jpg" alt="Guerra de los Dioses">
-                <h3>Guerra de los Dioses</h3>
-                <p>El conflicto que definió el destino de las Tierras Sagradas.</p>
-            </div>
-            <div class="card-skewed">
-                <img src="../img/historias/susurros-lunara.jpg" alt="Susurros de Lunara">
-                <h3>Susurros de Lunara</h3>
-                <p>Los secretos revelados por la diosa de la luna.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="tierras">
-        <h2>Explora las Tierras</h2>
-        <div class="cards-container">
-            <a href="tierras.php?t=montañas-negras" class="card-skewed">Montañas Negras</a>
-            <a href="tierras.php?t=bosques-de-selvath" class="card-skewed">Bosques de Selvath</a>
-            <a href="tierras.php?t=desiertos-de-fuego" class="card-skewed">Desiertos de Fuego</a>
-            <a href="tierras.php?t=lagos-de-lunara" class="card-skewed">Lagos de Lunara</a>
-        </div>
-    </section>
 
 
 
     </div>
 
-    <?php include '../includes/footer.php'; ?>
+    
 
 <script>
   // Registrar el plugin ScrollTrigger
@@ -243,6 +202,35 @@
 
     });
 </script>
+
+<script>
+  var map = L.map('mapa', {
+    crs: L.CRS.Simple, // Coord sistema simple para mapas personalizados
+    minZoom: 3.499999999999999,       // zoom mínimo
+    maxZoom: 5         // zoom máximo
+  });
+
+  var w = 1050; // ancho real de la imagen del mapa
+  var h = 625;  // alto real de la imagen del mapa
+
+  // Coordenadas de las esquinas
+  var southWest = map.unproject([0, h], map.getMaxZoom()-1);
+  var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
+  var bounds = new L.LatLngBounds(southWest, northEast);
+
+  // Agregar imagen como capa del mapa
+  L.imageOverlay('../img/Indices/mapaprueba.webp', bounds).addTo(map);
+
+  // Ajustar mapa a los límites de la imagen
+  map.setMaxBounds(bounds);
+  map.fitBounds(bounds);
+
+  // Opcional: agregar marcador de ejemplo
+  var marker = L.marker(map.unproject([500, 300], map.getMaxZoom()-1)).addTo(map)
+    .bindPopup('<b>Marcador</b><br>Ejemplo de lugar.');
+
+</script>
+
 
 <?php include "../includes/footer.php"; ?>
 

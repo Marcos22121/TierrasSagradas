@@ -7,9 +7,13 @@
   <div class="header-container">
    
 <div class="logo">
+          <a href="javascript:void(0)" id="openSidebar">
     <img src="../img/Includes/banner.png" alt="Tierras Sagradas" width="100px" height="150px" id="logo-banner">
+      </a>
     <h2>TIERRAS SAGRADAS</h2>
 </div>
+
+
 
     <nav>
       <form class="search-skewed" action="buscar.php" method="get">
@@ -61,11 +65,11 @@ header {
 .logo img {
     cursor: pointer;
     transition: 0.3s;
-    margin-top: 10%;
+    margin-top: 40%;
 }
 
 .logo img:hover {
-    padding-top: 3.2%;
+    padding-top: 15%;
 }
 
 .logo h2 {

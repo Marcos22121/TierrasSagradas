@@ -37,8 +37,8 @@
       <li><a href="personajes.php?c=tempus">Bondlack</a></li>
       <li><a href="personajes.php?c=lunara">Aiden</a></li>
       <li><a href="personajes.php?c=nerok">Ignamund</a></li>
-      <li><a href="personajes.php?c=tempus">Fakutron</a></li>
-      <li><a href="personajes.php?c=lunara"></a></li>
+      <li><a href="personajes.php?c=tempus">Ver Todos...</a></li>
+ 
       
     </ul>
   </li>
