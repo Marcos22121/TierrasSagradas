@@ -27,13 +27,23 @@
 
 body {
     margin: 0;
-    background-color: var(--bg);
-    padding: 0%;
+    padding: 0;
     overflow-x: hidden;
     color: var(--color-text);
     font-family: 'Libertinus Serif', serif;
     font-size: 1.1rem;
+
+    /* Imagen de fondo */
+    background-image: url('../img/Indices/aman.png'); /* reemplazá con la ruta de tu imagen */
+    background-size: cover;           /* cubre todo el body */
+    background-position: center;      /* centra la imagen */
+    background-repeat: no-repeat;     /* evita que se repita */
+    background-attachment: fixed;     /* opcional: mantiene la imagen fija al hacer scroll */
+    
+    /* Color de respaldo en caso de que la imagen no cargue */
+    background-color: var(--bg);
 }
+
 
 p {
     line-height: 1.6;
@@ -262,24 +272,47 @@ p {
 
 .content-wrapper {
     position: relative;
-    background-image: url('../img/Indices/marco.png');
-    background-repeat: repeat-y;
-    background-position: center top;
-    background-size: 120% auto;
-    padding: 150px;
-    margin-top: -5%;
-    padding-top: 120px;
-    margin-bottom: 50px;
-    z-index: 1;
+    box-sizing: border-box;
+    padding: 120px 60px;
+    margin: 20px auto 50px auto; /* top, horizontal auto, bottom */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     min-height: 400px;
+    border-radius: 35px;
+
+    width: 95%;
+    max-width: 1950px;
+
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
     overflow: hidden;
 }
 
+/* Borde gradiente como pseudo-elemento */
+.content-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 35px;
+    padding: 2px; /* grosor del borde */
+    background: linear-gradient(45deg, #b48505, #FFB700, #ca970c, #FFD700);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+
+
+
+  
 
 h2 {
     font-family: 'Cinzel', serif;
@@ -414,3 +447,5 @@ h2 {
     scale: 1;
     transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
 }
+
+
