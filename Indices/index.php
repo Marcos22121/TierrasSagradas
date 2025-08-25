@@ -20,35 +20,47 @@
 
     </script>
 </head>
-<?php include '../includes/header.php'; ?>
 <body>
-<section class="flex">
-   <section id="hero">
-  
-    <img src="../img/indices/ezgif.gif" alt="Tierras Sagradas" class="hero-gif">
+    <?php include '../includes/header.php'; ?>
 
-   
-    <div class="hero-overlay">
-        <h1>Bienvenido a las Tierras Sagradas</h1>
-        <p>Donde dioses, bestias y héroes escriben la historia de un mundo épico.</p>
-        <div class="hero-cta">
-            <a href="personajes.php" class="btn-skewed">Explorar Personajes</a>
-            <a href="bestiario.php" class="btn-skewed">Ver Bestiario</a>
+<section class="flex">
+      <section id="hero" class="section">
+      <img class="hero-bg" src="../img/Indices/ezgif.gif" alt="Cielo mítico de Tierras Sagradas">
+      <div class="hero-vignette"></div>
+
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1 class="fx-stroke">Bienvenido a <br><span>Tierras Sagradas</span></h1>
+          <p class="lead">
+            Un compendio viviente de dioses, héroes y clanes; forjado a través de la luz de Binohmo.
+          </p>
+          <div class="cta-row">
+            <a href="./historias.php" class="btn-gold">Leyendas y más</a>
+            <a href="#map-section" class="btn-ghost">Ver mapa</a>
+          </div>
         </div>
-    </div>
-    <div id="hero-particles"></div> <!-- Aquí se renderizan las partículas -->
+        <div class="hero-right">
+          <!-- Espacio para un escudo / sello / dragón (opcional) -->
+          <!-- <img src="../img/Indices/dragon.png" alt="Sello" class="hero-emblem"> -->
+        </div>
+      </div>
 </section>
 
 <div class="horizontal-frame">
 
 <div class="horizontal-frame-overlay">
-        <img src="../img/Indices/dragon.png" alt="augrim" width="400px" height="400px" class="hero-img">
+        <img src="../img/Indices/dragonnashe.webp" alt="augrim" width="400px" height="400px" class="hero-img">
 
     <div>
     <h2>Sobre las Tierras Sagradas</h2>
     <hr>
     <p>Las Tierras Sagradas son un vasto mundo lleno de mitología, donde dioses y héroes conviven con bestias legendarias. Desde las Montañas Negras hasta los Lagos de Lunara, cada rincón guarda secretos y aventuras por descubrir.</p>
     <p>En esta enciclopedia encontrarás información sobre los dioses que rigen este mundo, las bestias que lo habitan y las historias que han forjado su historia. Explora los personajes destacados, sumérgete en el bestiario y descubre las leyendas que dan vida a las Tierras Sagradas.</p>
+          <div class="cta-row">
+            <a href="./personajes.php" class="btn-gold">Explorar personajes</a>
+            <a href="#map-section" class="btn-ghost">Ver mapa</a>
+          </div>
+</div>
 </div>
     
 
@@ -112,7 +124,7 @@
 </div>
     
 </section>
-<div class="mapa-h2">
+<div id="map-section" class="mapa-h2">
 <h2>Mapa Interactivo</h2>
 </div>
 

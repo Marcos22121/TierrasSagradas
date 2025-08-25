@@ -1,27 +1,35 @@
 
 
+
 /* ===========================
    VARIABLES Y TIPOGRAFÍA
 =========================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');:root {
-    --color-bg: #0B0B0B;
-    --color-dorado-start: #F5D38A;
-    --color-dorado-end: #C9952E;
-    --color-text: #F5D38A;
-    --transition-speed: 0.2s;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
-    
+:root {
+
+    --bg: #0B0B0B;
+    --panel: #181619;
+    --panel-2: #181B22;
+    --panel-3: #272A31;
+
+    --gold-1: #F5D38A;
+    --gold-2: #C9952E;
+
+    --text: #F5D38A;
+    --ink: #EDE7D9;
+    --muted: #C2B79E;
+
+    --transition-speed: 0.2s;
+    --ring: conic-gradient(from 0deg, rgba(0,0,0,0) 0 20%, var(--gold-1) 30%, var(--gold-2) 45%, rgba(0,0,0,0) 55% 100%);
 }
 
-
-
-/* Fonts */
 body {
     margin: 0;
+    background-color: var(--bg);
     padding: 0%;
     overflow-x: hidden;
-    background-color: var(--color-bg);
     color: var(--color-text);
     font-family: 'Libertinus Serif', serif;
     font-size: 1.1rem;
@@ -37,35 +45,103 @@ p {
 /* ===========================
    HERO
 =========================== */
-/* ===========================
-    HERO
-=========================== */
+
 #hero {
-    position: relative;
-    height: 100vh; /* Usa viewport height para ocupar toda la pantalla */
-    width: 100vw;
-    overflow: hidden;
-    min-height: 500px; /* Asegura un tamaño mínimo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#hero-particles {
-    position: absolute;
-    top: 0;
-    left: 0;
+    min-height: 85vh;
     width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
+    overflow: hidden;
+    display: grid;
+    place-items: stretch;
+    isolation: isolate;
+    background-color: var(--bg);
+    margin-top: 4%;
 }
-
-.hero-gif {
+.hero-bg {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    opacity: .85;
+    filter: contrast(1.05) saturate(1.1) brightness(.85);
+    z-index: -2;
+}
+.hero-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+    radial-gradient(120% 80% at 80% 40%, rgba(0,0,0,0) 0 60%, rgba(0, 0, 0, 0.096) 80%, rgba(0, 0, 0, 0.397) 10%),
+    linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.75));
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+.hero-left h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    line-height: 1.08;
+    margin: .2rem 0 .6rem 0;
+    color: var(--text);
+    text-shadow: 0 0 10px var(--gold-2);
+}
+.hero-left h1 span {
+    background: linear-gradient(90deg, var(--gold-1), var(--gold-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.fx-stroke {
+    text-shadow: 0 0 18px rgba(201,149,46,.25);
+}
+.lead {
+    max-width: 56ch;
+    color: var(--muted);
+}
+.cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    margin-top: 1rem;
+}
+.btn-gold, .btn-ghost {
+    display: inline-block;
+    padding: .75rem 1.15rem;
+    text-decoration: none;
+    border-radius: 12px;
+    letter-spacing: .02em;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, background .3s ease, color .3s ease;
+    border: 1px solid rgba(201,149,46,.35);
+}
+.btn-gold {
+    color: #101013;
+    font-weight: 700;
+    background: linear-gradient(120deg, var(--gold-1), var(--gold-2));
+    box-shadow: 0 0 24px rgba(201,149,46,.15);
+}
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,149,46,.25);
+}
+.btn-ghost {
+    color: var(--ink);
+    background: rgba(201,149,46,.08);
+}
+.btn-ghost:hover {
+    background: rgba(201,149,46,.18);
+}
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Fix: horizontal-frame sticks to bottom of hero */
@@ -73,7 +149,6 @@ p {
 .horizontal-frame {
     background-image: url('../img/Indices/horMarco2.png');
     background-repeat: repeat-x;
-    background-position: center;
     background-size: auto 100%; /* Full height, auto width for repeat */
     width: 100vw;
     min-height: 220px; /* Adjust as needed for your frame image */
@@ -105,59 +180,9 @@ p {
     align-items: center;
     justify-content: center;
     z-index: 2;
-        z-index: 10;
     position: relative; /* Ensure z-index works */
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;  
-}
-
-.hero-overlay h1 {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2rem, 5vw, 4rem); /* Tamaño de fuente adaptable */
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px var(--color-dorado-end);
-}
-
-.hero-overlay p {
-    font-size: clamp(1rem, 2vw, 1.2rem); /* Tamaño de fuente adaptable */
-    margin-bottom: 2rem;
-    text-shadow: 0 0 8px rgba(0,0,0,0.7);
-}
-
-.hero-cta {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los botones se envuelvan */
-    justify-content: center;
-    gap: 1rem;
-}
-
-.hero-cta .btn-skewed {
-    display: inline-block;
-    padding: 0.7rem 1.5rem;
-    background: linear-gradient(120deg, var(--color-dorado-start), var(--color-dorado-end));
-    color: var(--color-bg);
-    text-decoration: none;
-    transform: skewX(-12deg);
-    transition: all var(--transition-speed) ease-in-out;
-}
-
-.hero-cta .btn-skewed:hover {
-    transform: skewX(-10deg) scale(1.05);
-    box-shadow: 0 0 15px var(--color-dorado-end);
-}
 
 /* ===========================
    SECCIONES
@@ -259,7 +284,6 @@ p {
 h2 {
     font-family: 'Cinzel', serif;
     font-size: 2rem;
-    margin-bottom: 2rem;
     text-align: center;
     text-shadow: 0 0 5px var(--color-dorado-end);
 }
@@ -390,4 +414,3 @@ h2 {
     scale: 1;
     transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
 }
-
