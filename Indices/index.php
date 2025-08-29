@@ -6,19 +6,12 @@
     <title>Tierras Sagradas - Enciclopedia Mitológica</title>
     <meta name="description" content="Explora los dioses, bestias y historias de las Tierras Sagradas.">
 
-    <!-- Fonts -->
-
-    <!-- CSS -->
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    </script>
 </head>
 <body>
     <?php include '../includes/header.php'; ?>
@@ -40,9 +33,7 @@
           </div>
         </div>
         <div class="hero-right">
-          <!-- Espacio para un escudo / sello / dragón (opcional) -->
-          <!-- <img src="../img/Indices/dragon.png" alt="Sello" class="hero-emblem"> -->
-        </div>
+          </div>
       </div>
 </section>
 
@@ -63,43 +54,38 @@
 </div>
 </div>
     
-
-
 </section>
 
-<div class="content-wrapper"> 
+  <div class="content-wrapper"> 
 
+<section class="mt-20 flex flex-col md:flex-row items-center gap-10 p-5 rounded-lg border border-gray-700 bg-black bg-opacity-40 max-w-7xl mx-auto shadow-xl">
+    <div class="w-full md:w-1/2 flex-shrink-0">
+        <img src="../img/Indices/dragon.png" alt="Ilustración de un dragón mítico" class="w-full h-auto object-cover rounded-lg shadow-lg">
+    </div>
 
-
-    
-
+    <div class="flex-grow md:w-1/2 text-center md:text-left">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-4 px-2 tracking-wide fx-stroke">
+            Adéntrate en la Cripta de los Antiguos
+        </h2>
+        <p class="text-lg text-gray-300 mb-6 px-2">
+            Descubre los secretos más oscuros y los artefactos más poderosos de las Tierras Sagradas. En lo profundo de las criptas yacen no solo tesoros, sino también historias de héroes olvidados y deidades caídas. Prepárate para enfrentar desafíos que pondrán a prueba tu ingenio y tu valentía.
+        </p>
+        <div class="flex justify-center md:justify-start px-2">
+            <a href="./criptas.php" class="btn-gradient-fill relative overflow-hidden group">
+                <span class="relative z-10 text-white font-semibold">Explorar la Cripta</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-600 transition-transform duration-500 transform scale-x-0 origin-left group-hover:scale-x-100"></div>
+            </a>
+        </div>
+    </div>
 </section>
-<div id="map-section" class="mapa-h2">
-<h2>Mapa Interactivo</h2>
-</div>
 
-<div class="pergamino-wrapper">
-    
-  <img class="pergamino-img" src="../img/indices/pergamin.png" alt="Pergamino">
-
-  <div class="map-slot">
-    <div id="mapa" style="width: 60%; height: 55%; border-radius: 12px; margin-bottom: 105px;"></div>
-  </div>
-</div>
-
-
-
-
-
-</div>
+ </div> 
+  
 
     
-
 <script>
-  // Registrar el plugin ScrollTrigger
+  // ... (tu script de GSAP y Leaflet permanece igual)
   gsap.registerPlugin(ScrollTrigger);
-
-  // Seleccionar todas las secciones que queremos animar
   gsap.utils.toArray("section").forEach(section => {
     gsap.from(section, {
       opacity: 0,
@@ -108,91 +94,22 @@
       ease: "power3.out",
       scrollTrigger: {
         trigger: section,
-        start: "top 85%",  // cuando el top de la sección llega al 80% de la pantalla
+        start: "top 85%",
         toggleActions: "play none none none"
       }
     });
   });
 
-  // Animación del hero
-  gsap.from(".hero-overlay h1", { duration: 1.5, y: -50, opacity: 0, ease: "power3.out" });
-  gsap.from(".hero-overlay p", { duration: 1.5, y: 20, opacity: 0, delay: 0.3, ease: "power3.out" });
-  gsap.from(".hero-cta .btn-skewed", { duration: 1, y: 20, delay: 0.5, stagger: 0.2, ease: "power3.out" });
-</script>
-<script>
-    document.querySelectorAll('.card-skewed').forEach(card => {
-        const particleContainer = card.querySelector('.particles-container');
-        const particleId = particleContainer.id;
-
-        let particlesLoaded = false;
-
-        card.addEventListener('mouseenter', () => {
-            if (!particlesLoaded) {
-                particlesJS.load(particleId, '../Scripts/particlesjs-config.json', function() {
-                    console.log(`Partículas cargadas para ${particleId}`);
-                    particlesLoaded = true;
-                });
-            }
-        });
-    });
-</script>
-
-<script src="../Scripts/particles.js"></script>
-<script>
-    document.querySelectorAll('.card-skewed').forEach(card => {
-        const particleContainer = card.querySelector('.particles-container');
-        const particleId = particleContainer.id;
-
-        let particlesLoaded = false;
-
-        card.addEventListener('mouseenter', () => {
-            if (!particlesLoaded) {
-                particlesJS.load(particleId, '../Scripts/particlesjs-config.json', function() {
-                    console.log(`Partículas cargadas para ${particleId}`);
-                    particlesLoaded = true;
-                });
-            }
-        });
-
-        card.addEventListener('mouseleave', () => {
-    const canvas = particleContainer.querySelector('canvas');
-    if (canvas) {
-        canvas.remove();
-        particlesLoaded = false;
-    }
-});
-
-    });
-</script>
-
-<script>
-  var map = L.map('mapa', {
-    crs: L.CRS.Simple, // Coord sistema simple para mapas personalizados
-    minZoom: 3.499999999999999,       // zoom mínimo
-    maxZoom: 5         // zoom máximo
-  });
-
-  var w = 1050; // ancho real de la imagen del mapa
-  var h = 625;  // alto real de la imagen del mapa
-
-  // Coordenadas de las esquinas
+  var map = L.map('mapa', { crs: L.CRS.Simple, minZoom: 3.499999999999999, maxZoom: 5 });
+  var w = 1050, h = 625;
   var southWest = map.unproject([0, h], map.getMaxZoom()-1);
   var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
   var bounds = new L.LatLngBounds(southWest, northEast);
-
-  // Agregar imagen como capa del mapa
   L.imageOverlay('../img/Indices/mapaprueba.webp', bounds).addTo(map);
-
-  // Ajustar mapa a los límites de la imagen
   map.setMaxBounds(bounds);
   map.fitBounds(bounds);
-
-  // Opcional: agregar marcador de ejemplo
-  var marker = L.marker(map.unproject([500, 300], map.getMaxZoom()-1)).addTo(map)
-    .bindPopup('<b>Marcador</b><br>Ejemplo de lugar.');
-
+  var marker = L.marker(map.unproject([500, 300], map.getMaxZoom()-1)).addTo(map).bindPopup('<b>Marcador</b><br>Ejemplo de lugar.');
 </script>
-
 
 <?php include "../includes/footer.php"; ?>
 
