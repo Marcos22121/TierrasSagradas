@@ -29,7 +29,7 @@
         </div>
         <nav>
             <form class="search-skewed" action="buscar.php" method="get">
-                <input type="text" name="q" placeholder="Buscar..." />
+                <input class="search-skewed" type="text" name="q" placeholder="Buscar..." />
                 <button type="submit"></button>
             </form>
             <a href="personajes.php" class="nav-skewed"><span>Personajes</span></a>
@@ -96,6 +96,7 @@
             transition: background 0.3s, color 0.3s;
             height: 100%;
             white-space: nowrap;
+            font-family: Libertinus Serif, serif;
         }
         .nav-skewed {
             justify-content: center;

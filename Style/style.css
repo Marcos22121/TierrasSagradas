@@ -1,14 +1,9 @@
-
-
-
 /* ===========================
-   VARIABLES Y TIPOGRAFÍA
+   FUENTES, VARIABLES Y BASE
 =========================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
 :root {
-
     --bg: #0B0B0B;
     --panel: #181619;
     --panel-2: #181B22;
@@ -25,25 +20,38 @@
     --ring: conic-gradient(from 0deg, rgba(0,0,0,0) 0 20%, var(--gold-1) 30%, var(--gold-2) 45%, rgba(0,0,0,0) 55% 100%);
 }
 
+/* ===========================
+   BODY Y TIPOGRAFÍA
+=========================== */
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    color: var(--color-text);
     font-family: 'Libertinus Serif', serif;
     font-size: 1.1rem;
+    color: var(--color-text);
 
-    /* Imagen de fondo */
-    background-image: url('../img/Indices/bg2.gif'); /* reemplazá con la ruta de tu imagen */
-    background-size: cover;           /* cubre todo el body */
-    background-position: center;      /* centra la imagen */
-    background-repeat: no-repeat;     /* evita que se repita */
-    background-attachment: fixed;     /* opcional: mantiene la imagen fija al hacer scroll */
-    
-    /* Color de respaldo en caso de que la imagen no cargue */
+    /* Fondo */
+    background-image: url('../img/Indices/bg2.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-color: var(--bg);
-}
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
 
 p {
     line-height: 1.6;
@@ -52,10 +60,17 @@ p {
     font: Libertinus Serif, serif;
 }
 
-/* ===========================
-   HERO
-=========================== */
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 0 0 5px var(--color-dorado-end);
+}
 
+
+/* ===========================
+   HERO SECTION
+=========================== */
 #hero {
     min-height: 85vh;
     width: 100%;
@@ -66,23 +81,24 @@ p {
     background-color: var(--bg);
     margin-top: 4%;
 }
+
 .hero-bg {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+    width: 100%; height: 100%;
     opacity: .85;
     filter: contrast(1.05) saturate(1.1) brightness(.85);
     z-index: -2;
 }
+
 .hero-vignette {
     position: absolute;
     inset: 0;
     z-index: -1;
     background:
-    radial-gradient(120% 80% at 80% 40%, rgba(0,0,0,0) 0 60%, rgba(0, 0, 0, 0.096) 80%, rgba(0, 0, 0, 0.397) 10%),
-    linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.75));
+      radial-gradient(120% 80% at 80% 40%, rgba(0,0,0,0) 0 60%, rgba(0, 0, 0, 0.096) 80%, rgba(0, 0, 0, 0.397) 10%),
+      linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.75));
 }
 
 .hero-inner {
@@ -94,6 +110,7 @@ p {
     margin: 0 auto;
     padding: clamp(1rem, 3vw, 2rem);
 }
+
 .hero-left h1 {
     font-family: 'Cinzel', serif;
     font-size: clamp(2rem, 5vw, 3.6rem);
@@ -108,31 +125,29 @@ p {
     background-clip: text;
     color: transparent;
 }
-.fx-stroke {
-    text-shadow: 0 0 18px rgba(201,149,46,.25);
-}
-.lead {
-    max-width: 56ch;
-    color: var(--muted);
-}
+.fx-stroke { text-shadow: 0 0 18px rgba(201,149,46,.25); }
+.lead { max-width: 56ch; color: var(--muted); }
+
 .cta-row {
     display: flex;
     flex-wrap: wrap;
     gap: .8rem;
     margin-top: 1rem;
 }
+
+/* Botones */
 .btn-gold, .btn-ghost {
     display: inline-block;
     padding: .75rem 1.15rem;
-    text-decoration: none;
     border-radius: 12px;
     letter-spacing: .02em;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, background .3s ease, color .3s ease;
     border: 1px solid rgba(201,149,46,.35);
+    text-decoration: none;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), background .3s, color .3s;
 }
 .btn-gold {
-    color: #101013;
     font-weight: 700;
+    color: #101013;
     background: linear-gradient(120deg, var(--gold-1), var(--gold-2));
     box-shadow: 0 0 24px rgba(201,149,46,.15);
 }
@@ -144,345 +159,178 @@ p {
     color: var(--ink);
     background: rgba(201,149,46,.08);
 }
-.btn-ghost:hover {
-    background: rgba(201,149,46,.18);
-}
+.btn-ghost:hover { background: rgba(201,149,46,.18); }
 
-.hero-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.hero-right { display: flex; justify-content: center; align-items: center; }
 
-/* Fix: horizontal-frame sticks to bottom of hero */
 
+/* ===========================
+   HORIZONTAL FRAME
+=========================== */
 .horizontal-frame {
     background-image: url('../img/Indices/horMarco2.png');
     background-repeat: repeat-x;
-    background-size: auto 100%; /* Full height, auto width for repeat */
+    background-size: auto 100%;
     width: 100vw;
-    min-height: 220px; /* Adjust as needed for your frame image */
+    min-height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    z-index: 10;
     margin-top: -5%;
     overflow: hidden;
     padding: 5%;
+    position: relative;
+    z-index: 10;
 }
-
-/* Elements inside .horizontal-frame will be centered and aligned horizontally */
 .horizontal-frame-overlay {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 2rem; /* Space between elements */
+    align-items: center;
+    gap: 2rem;
     width: 100%;
-    padding: 3rem 20%; /* Vertical padding, no excessive horizontal padding */
+    padding: 3rem 20%;
     position: relative;
     z-index: 11;
 }
+.flex { display: flex; align-items: center; justify-content: center;}
 
-.flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    position: relative; /* Ensure z-index works */
+
+/* ===========================
+   SECCIÓN MAPA (Pergamino)
+=========================== */
+.pergamino-wrapper {
+  position: relative;
+  max-width: 1500px;
+  margin: 2rem auto;
+  text-align: center;
+  z-index: 1;
+}
+.mapa-h2 { margin-top: 100px; }
+
+.pergamino-img {
+  display: block;
+  width: 100%; height: auto;
+  margin: 0 auto;
+  user-select: none; -webkit-user-drag: none;
+  z-index: 1;
+  position: relative;
+}
+
+.map-slot {
+  position: absolute;
+  top: 10%; left: 10%; right: 10%; bottom: 12%;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 12px; overflow: hidden;
+  transform: perspective(800px) rotateX(8deg) translateY(-10px);
+  transform-origin: top center;
+  z-index: 2;
+}
+
+#mapa {
+    width: 100%; height: 100%;
+    border: 2px solid rgba(212, 180, 90, 0.7);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.8),
+                0 15px 30px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(212, 180, 90, 0.5);
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .pergamino-wrapper { max-width: 90%; }
+  .map-slot { top: 12%; left: 12%; right: 12%; bottom: 15%; }
 }
 
 
 /* ===========================
-   SECCIONES
+   CONTENT WRAPPER (Cards doradas)
 =========================== */
-.pergamino-wrapper {
-  position: relative;
-  width: auto;
-  max-width: 1500px;
-  margin: 2rem auto;
-  z-index: 1;
-  text-align: center;
-}
-.mapa-h2 {
-    margin-top: 100px;
-}
-
-.pergamino-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-/* Recuadro del mapa */
-.map-slot {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  right: 10%;
-  bottom: 12%;
-  z-index: 2;
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* efecto "empujado hacia adelante" tipo parallax estático */
-  transform: perspective(800px) rotateX(8deg) translateY(-10px);
-  transform-origin: top center;
-}
-
-/* Mapa interactivo dentro del recuadro */
-#mapa {
-  width: 100%;
-  height: 100%;
-  border: 2px solid rgba(212,180,90,0.7);
-  box-shadow:
-    inset 0 0 25px rgba(0,0,0,0.8),
-    0 15px 30px rgba(0,0,0,0.5),
-    0 0 25px rgba(212,180,90,0.5);
-  background: rgba(0,0,0,0.5);
-  border-radius: 12px;
-}
-
-
-
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .pergamino-wrapper {
-    max-width: 90%;
-  }
-
-  .map-slot {
-    top: 12%;
-    left: 12%;
-    right: 12%;
-    bottom: 15%;
-  }
-}
-
-
 .content-wrapper {
-    position: relative;
-    box-sizing: border-box; /* padding + border dentro del width */
-    width: 100  %;
-    max-width: 1870px; /* ajusta al tamaño que quieras */
-    margin: 50px auto; /* centrado horizontal y separación vertical */
-    padding: 60px; /* espacio interno */
+    width: 40%;
+    padding: 2rem;
+    margin: 1rem;
     display: flex;
+    aspect-ratio: 1 / 1;   /* fuerza el cuadrado */
+    
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    z-index: 1;
 
-    border: 125px solid transparent; 
+    border: 40px solid transparent;
     border-image-source: url("../img/Indices/bordeDOR.png");
-    border-image-slice: 500 fill;
-    border-image-repeat: round;
-}
-  
-h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 2rem;
-    text-align: center;
-    text-shadow: 0 0 5px var(--color-dorado-end);
-}
+    border-image-slice: 200 fill;
+    border-radius: 1rem;
 
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.card-skewed {
-    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 0;
-    border-image: linear-gradient(90deg, var(--color-dorado-start), var(--color-dorado-end)) 1;
-    transform: skewX(-12deg);
-    transition: all 0.2s ease-in-out;
-    width: 270px;
-    color: var(--color-text);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-height: 350px;
-    justify-content: flex-end;
-}
-
-.card-skewed:hover {
-    transform: skewX(-12deg) scaleY(1.04);
-    box-shadow: 0 0 15px var(--color-dorado-end);
-    cursor: pointer;
-}
-
-.card-skewed img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 0;
-    transform: skewX(0deg);
-    z-index: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.card-skewed-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 1.5rem;
-}
-
-/* Gradient background for text on hover */
-.card-skewed-content::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%; /* más alto para cubrir bien el texto */
-    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-    z-index: 1; /* ahora está encima de la imagen */
-    opacity: 0; /* oculto por default */
-}
-
-.card-skewed:hover .card-skewed-content::before {
-    opacity: 1;
-}
-
-
-/* Hide h3 and p by default */
-.card-skewed h3,
-.card-skewed p {    
-    transform: skewX(12deg);
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-    text-shadow: -2px 3px 17px rgba(0,0,0,0.95);
-    z-index: 2; /* aseguramos que el texto esté encima del fondo */
-}
-
-/* Show h3 and p only on hover */
-.card-skewed:hover h3,
-.card-skewed:hover p {
-    opacity: 1;
-}
-
-.particles-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     z-index: 1;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
 }
 
-.card-skewed:hover .particles-container {
-    opacity: 1;
+.text-lg {
+    text-align: center;
 }
 
-.card-overlay:hover {
-    transform: translateY(-40px) skewX(0deg);
-    scale: 1.25;
-    transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
+.content-wrapper img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* fuerza el cuadrado */
+  object-fit: cover;     /* recorta en vez de estirar */
+  border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      transition: 0.4s ease;
+
 }
 
-.card-overlay:hover {
-    transform: translateY(-42px) skewX(0deg);
-    scale: 1.25;
-    transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
-}
-
-.card-overlay:not(:hover) {
-    transform: translateY(0px) skewX(0deg);
-    scale: 1;
-    transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
+.content-wrapper img:hover {
+    transform: scale(1.05);
+    transform: perspective(15cm) rotateX(-3deg) rotateY(2deg);
+    box-shadow: 1 7px 10px rgba(0, 0, 0, 0.3);
 }
 
 
-/* Estilo base del botón */
+@media (max-width: 768px) {
+    .content-wrapper { width: 90%; padding: 1.5rem; }
+}
+
+
+
+/* ===========================
+   BOTONES GRADIENT-FILL
+=========================== */
 .btn-gradient-fill {
     display: inline-block;
     position: relative;
-    padding: 2px; /* Añadido padding para el borde */
+    padding: 2px;
     background: #0d0c0c;
     border: none;
+    border-radius: 4px;
     overflow: hidden;
     color: #e3c48a;
-    text-decoration: none;
     cursor: pointer;
+    text-decoration: none;
     transition: all 0.3s ease;
-    border-radius: 4px;
 }
-
-/* Pseudo-elemento para el borde gradiente */
 .btn-gradient-fill::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: absolute; inset: 0;
     background: linear-gradient(90deg, #d4af37, #f7d780);
-    z-index: -1;
-    transition: transform 0.5s ease-in-out;
-    transform: scale(0.95);
     border-radius: 4px;
+    transform: scale(0.95);
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
 }
-
-/* El elemento para el efecto de llenado */
 .btn-gradient-fill > div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute; inset: 0;
     background: linear-gradient(90deg, #d4af37, #f7d780);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.5s ease-in-out;
     z-index: 0;
 }
-
-/* Contenido del botón, ahora con padding interno para el texto */
 .btn-gradient-fill > span {
-    position: relative;
-    z-index: 10;
-    display: block; /* Asegura que el padding funcione correctamente */
-    padding: 1rem 2.5rem; /* El padding original se mueve aquí */
+    position: relative; z-index: 10;
+    display: block;
+    padding: 1rem 2.5rem;
     background: #0d0c0c;
     border-radius: 4px;
 }
-
-
-
-.btn-gradient-fill:hover > div {
-    transform: scaleX(1);
-}
+.btn-gradient-fill:hover > div { transform: scaleX(1); }

@@ -30,6 +30,7 @@
   <style>
     footer {
       background: #0B0B0B;
+      width: 100%;
       padding: 2rem 1rem;
       text-align: center;
       color: var(--color-text);
