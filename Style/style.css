@@ -275,15 +275,14 @@ h2 {
   aspect-ratio: 1 / 1;   /* fuerza el cuadrado */
   object-fit: cover;     /* recorta en vez de estirar */
   border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      box-shadow: 0 4px 12px rgba(85, 70, 1, 0.6);
       transition: 0.4s ease;
 
 }
 
 .content-wrapper img:hover {
-    transform: scale(1.05);
-    transform: perspective(15cm) rotateX(-3deg) rotateY(2deg);
-    box-shadow: 1 7px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(0.98);
+   filter: brightness(0.9);
 }
 
 
@@ -334,3 +333,99 @@ h2 {
     border-radius: 4px;
 }
 .btn-gradient-fill:hover > div { transform: scaleX(1); }
+
+
+    .recuadro {
+    width: 95%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    border: 10px solid transparent;
+    border: 12px solid transparent; /* ancho base del borde */
+    border-image-source: url("../img/Indices/bordeDOR.jpg"); /* tu imagen */
+    border-image-slice: 300;    /* cuánto "cortar" de la imagen (es como margen interno de la textura) */
+    border-image-width: 12px;  /* grosor del borde en pantalla */
+    border-image-outset: 0;    /* si querés que sobresalga más del recuadro */
+    border-image-repeat: round; /* opciones: stretch | repeat | round | space */}
+
+    .perspective-1000 {
+    perspective: 1000px;
+    }
+
+    .imagen-izquierda {
+
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform 0.4s ease-out;
+    will-change: transform;
+    }
+
+    .contenido {
+    margin-left: 20px;
+    flex: 1;
+        color: #e3c48a;
+    text-align: center; /* centra título, texto y botón */
+    }
+
+    .titulo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    }
+
+    .descripcion {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    }
+
+    .boton {
+    background: #e53935;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block; /* se queda centrado */
+    }
+
+    .boton:hover {
+    background: #c62828;
+    }
+
+    .texto-boton {
+    position: relative;
+    z-index: 10;
+        color: #e3c48a;
+    font-weight: 600;
+    }
+
+
+    .recuadro-mapa {
+  width: 95%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+
+  border: 12px solid transparent; 
+  border-image-source: url("");
+  border-image-slice: 75;    
+  border-image-width: 20px;  
+  border-image-outset: 1;    
+  border-image-repeat: round;
+
+  display: flex;
+  flex-direction: column; /* si querés que todo quede vertical, o cambia a row si necesitas horizontal */
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}

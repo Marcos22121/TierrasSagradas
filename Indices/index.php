@@ -65,15 +65,15 @@
 
     <div class="flex-grow w-full text-center">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-4 px-2 tracking-wide fx-stroke">
-            Adéntrate en la Cripta de los Antiguos  
+            Adéntrate en el Museo 
         </h2>
         <p class="text-lg text-gray-300 mb-6 px-2">
-            Descubre secretos olvidados y artefactos prohibidos en lo profundo de la Cripta. 
-            Tesoros perdidos, héroes caídos y ecos de dioses antiguos aguardan a quienes se atreven.
+            Descubre secretos olvidados y artefactos prohibidos en lo profundo del Museo. 
+            Tesoros perdidos, héroes caídos y ecos de dioses antiguos aguardan a quienes se adentran en el.
         </p>
         <div class="flex justify-center px-2">
-            <a href="./criptas.php" class="btn-gradient-fill relative overflow-hidden group">
-                <span class="relative z-10 text-white font-semibold">Explorar la Cripta</span>
+            <a href="../indices/museo.php" class="btn-gradient-fill relative overflow-hidden group">
+                <span class="relative z-10 text-white font-semibold">Explorar el Museo</span>
                 <div class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-600 transition-transform duration-500 transform scale-x-0 origin-left group-hover:scale-x-100"></div>
             </a>
         </div>
@@ -130,7 +130,53 @@
     </div>
 </section>
 
+
+
     </div>
+
+<div class="recuadro">
+
+  <div class="perspective-1000">
+    <img src="../img/indices/bestiario.jpg" 
+         alt="Imagen izquierda" 
+         class="imagen-izquierda">
+  </div>
+
+  <div class="contenido">
+    <h2 class="titulo">Las Bestias de Tierras Sagradas</h2>
+    <p class="descripcion">En las vastas y cambiantes Tierras Sagradas, no solo los héroes y villanos han marcado su huella. Bajo la superficie de sus bosques ancestrales, en las ruinas olvidadas de ciudades caídas y en los abismos que dividen el mundo, habitan criaturas que desafían la razón humana. Algunas son guardianes milenarios, creados para proteger secretos prohibidos. Otras son monstruos nacidos del odio, del caos y de la corrupción que se extiende como una plaga en este reino.
+
+El Bestiario de las Tierras Sagradas es más que un simple compendio de seres: es un testimonio vivo de los miedos y leyendas que han dado forma a las culturas de cada región. En sus páginas encontrarás desde bestias colosales capaces de derrumbar murallas con un solo rugido, hasta entidades invisibles que se deslizan entre las sombras, cazando a los incautos que osan adentrarse en sus dominios.
+
+Los sabios que recopilaron este conocimiento advierten que cada criatura tiene un propósito en el tejido del mundo. Algunas ofrecen sabiduría a quienes se atreven a escuchar su voz, otras representan pruebas de fuego que solo los más valientes pueden superar. Pero todas, sin excepción, están unidas por un mismo destino: recordarnos que el verdadero poder de las Tierras Sagradas no yace en sus reinos ni en sus ejércitos, sino en las fuerzas ocultas que acechan más allá de la vista.
+
+Explorar este bestiario es adentrarse en un territorio incierto, donde la línea entre mito y realidad se desdibuja. Cada entrada que leas es una invitación a imaginar, a temer y a descubrir qué secretos guardan estas criaturas. Quizás, al conocerlas, logres comprender mejor el equilibrio que sostiene este mundo… o tal vez, al igual que muchos antes, quedes marcado por aquello que nunca debió ser revelado.</p>
+   <div class="boton-container">
+  <button class="btn-gradient-fill">
+    <span class="texto-boton">Explorar el Bestiario</span>
+    <div class="overlay"></div>
+  </button>
+</div>
+
+  </div>
+
+
+
+  
+</div>
+
+<div class="recuadro-mapa">
+  <div id="map-section" class="mapa-h2">
+    <h2>Mapa Interactivo</h2>
+  </div>
+  <div class="pergamino-wrapper">
+    <img class="pergamino-img" src="../img/indices/pergamin.png" alt="Pergamino">
+    <div class="map-slot">
+      <div id="mapa" style="width: 60%; height: 55%; border-radius: 12px; margin-bottom: 105px;"></div>
+    </div>
+  </div>
+</div>
+
 
     <!-- Scripts -->
     <script>
@@ -160,6 +206,31 @@
       var marker = L.marker(map.unproject([500, 300], map.getMaxZoom()-1)).addTo(map).bindPopup('<b>Marcador</b><br>Ejemplo de lugar.');
     </script>
     <?php include "../includes/footer.php"; ?>
+
+<script>
+  const card = document.querySelector('.imagen-izquierda');
+  const container = card.parentElement;
+
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * 10; // inclinación vertical
+    const rotateY = ((x - centerX) / centerX) * -10; // inclinación horizontal
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateX(0) rotateY(0)';
+  });
+</script>
+
+
 
 </body>
 
