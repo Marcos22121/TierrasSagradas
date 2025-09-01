@@ -1,7 +1,4 @@
 
-/* ===========================
-   CARD SKEWED
-=========================== */
 .cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -84,4 +81,63 @@
     transform: translateY(0) skewX(0deg);
     scale: 1;
     transition: transform 0.66s cubic-bezier(0.4,0,0.2,1), scale 0.66s cubic-bezier(0.4,0,0.2,1);
+}
+
+
+
+
+.contenedor-personajes {
+  width: 85%;           /* un poco más pequeño que antes */
+  margin: 300px auto 40px auto; /* separación superior desde el top */
+  padding: 100px 60px;   /* más espacio entre las cards y el borde del contenedor */
+  display: flex;
+  flex-wrap: wrap;      /* permite varias filas */
+  justify-content: center;
+  gap: 0;               /* las cards siguen pegadas entre sí */
+
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+
+  border: 12px solid transparent;
+  border-image-source: url("../img/Indices/bordeDOR.jpg");
+  border-image-slice: 300;
+  border-image-width: 12px;
+  border-image-outset: 0;
+  border-image-repeat: round;
+}
+
+
+/* Recuadro vertical izquierdo */
+.sidebar-clases {
+    position: fixed;        /* siempre visible */
+    top: 0;
+    left: 0;
+    height: 100vh;          /* ocupa toda la altura de la pantalla */
+    width: 220px;           /* ancho del recuadro, podés ajustar */
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra verticalmente las imágenes */
+    align-items: center;     /* centra horizontalmente */
+    gap: 30px;               /* espacio entre imágenes */
+    padding: 20px;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.6);
+    z-index: 100;
+}
+
+/* Imágenes grandes como botones */
+.sidebar-clases .clase-btn {
+    width: 160px;           /* tamaño grande */
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto hover */
+.sidebar-clases .clase-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); /* brillo dorado */
 }

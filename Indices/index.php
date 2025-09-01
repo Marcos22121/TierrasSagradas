@@ -80,7 +80,6 @@
     </div>
 </section>
 
-<!-- Historias -->
 <section class="content-wrapper flex flex-col items-center gap-6 p-6 rounded-2xl bg-black bg-opacity-50 shadow-2xl">
     <div class="w-full flex justify-center">
         <img src="../img/Indices/Guerra3.jpg"
@@ -105,7 +104,6 @@
     </div>
 </section>
 
-<!-- Personajes -->
 <section class="content-wrapper flex flex-col items-center gap-6 p-6 rounded-2xl bg-black bg-opacity-50 shadow-2xl">
     <div class="w-full flex justify-center">
         <img src="../img/Indices/personajes.png"
@@ -117,6 +115,12 @@
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-4 px-2 tracking-wide fx-stroke">
             Conoce a los Personajes Legendarios
         </h2>
+
+<div class="flex justify-center mb-6">
+  <div class="h-2 w-1/2 rounded-full"
+       style="background: linear-gradient(to right, transparent, #FFD700 50%, transparent);">
+  </div>
+</div>
         <p class="text-lg text-gray-300 mb-6 px-2">
             Descubre a los héroes, villanos y seres legendarios que recorren las Tierras Sagradas. 
             Cada personaje lleva consigo una historia única y un destino propio.
@@ -162,20 +166,10 @@ Explorar este bestiario es adentrarse en un territorio incierto, donde la línea
 
 
 
+
   
 </div>
 
-<div class="recuadro-mapa">
-  <div id="map-section" class="mapa-h2">
-    <h2>Mapa Interactivo</h2>
-  </div>
-  <div class="pergamino-wrapper">
-    <img class="pergamino-img" src="../img/indices/pergamin.png" alt="Pergamino">
-    <div class="map-slot">
-      <div id="mapa" style="width: 60%; height: 55%; border-radius: 12px; margin-bottom: 105px;"></div>
-    </div>
-  </div>
-</div>
 
 
     <!-- Scripts -->
@@ -189,7 +183,7 @@ Explorar este bestiario es adentrarse en un territorio incierto, donde la línea
           ease: "power3.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 85%",
+            start: "top 95%",
             toggleActions: "play none none none"
           }
         });
